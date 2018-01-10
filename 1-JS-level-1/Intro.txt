@@ -1,0 +1,81 @@
+
+
+
+.js-lang
+
+    --> scripting lang web-pages in browser-envi
+    +
+    --> server-side lang on Node.js
+    --> mobile native appln
+    --> command-line tools ( i.e bild tools, compilers,....)
+
+---------------------------------------------
+
+.js-lang 
+
+
+   ==> FP + OOP
+   ==> dynamic typed
+
+   ==> single-threaded process , we can do concurrent actions
+   ==> Non-blocking IO
+
+-----------------------------------------------
+
+.js-lang ,
+
+   ==> based on 'ECMAScript spec'
+
+   latest release : ES6 
+
+
+-----------------------------------------------
+
+how to run .js-program ?
+
+  ==> using .js-runtime/engine
+
+  browser envi
+  --------------
+
+  a. chrome  ( v8(c++) )
+  b. firfox  ( rhino(java) )
+  c. IE/Edge ( chakra )
+  d. Safari  ( nitro )
+  ....
+
+  other envi
+  ---------------
+
+  a. Node.js ( v8 )
+  b. JVM     ( nashorn )
+  c. Apache CouchDB
+  d. MongoDB
+  e. Adobe
+
+  -----------------------------------------------
+
+  JS - topics
+  --------------
+
+   1. data-types
+   2. execution-context / scope
+   3. FP & OOP
+   4. closures
+   5. 'this' keyword / context's owner
+   6. using prototypes
+   7. obj's contraints
+   8. ES6 - New syntax
+   9. ES modules & commonJS modules with NPM
+   10. Concurreny Model with Event-Loop
+   11. Async Programming with Promise API & RxJS API
+   ------------------------------------------------
+   12. TypeScript
+
+---------------------------------------------------       
+
+
+
+   
+
+      
