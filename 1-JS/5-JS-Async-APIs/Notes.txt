@@ -1,0 +1,25 @@
+
+
+
+by default ,
+
+on event , event-handler always executes async
+
+--------------------------------------------------
+
+
+function f1(){
+    //...
+}
+function f2(){
+    f1(); //....
+}
+
+
+async APIs
+--------------
+
+    --> promise API  ( Es6 )
+    --> RxJS
+
+-------------------------------------------    

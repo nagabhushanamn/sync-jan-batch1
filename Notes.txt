@@ -1,0 +1,18 @@
+
+
+HTML component(s)
+------------------------
+
+HTMLXXXXElement   ==> class
+
+    <component/>  ==> instance
+    <component></component> ==> instance
+
+-------------------------------------
+
+component
+
+     - props
+     - state
+
+     <input type="text" size="15"/>    

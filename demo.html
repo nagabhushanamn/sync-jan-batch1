@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>HTML components</h1>
+    <hr/>
+
+    <div>
+        <input id="inp" type="text" onchange="updateCount()" />
+        <span> </span>
+    </div>
+
+    <script>
+        let inpComp = document.getElementById("inp");
+        let spanComp = document.querySelector("span");
+        let v = 0;
+        setInterval(() => {
+            v++;
+            inpComp.value = v;
+            var event = new Event('change');
+            inpComp.dispatchEvent(event)
+        }, 2000);
+        function updateCount() {
+            spanComp.innerText = v;
+        }
+    </script>
+
+
+</body>
+
+</html>

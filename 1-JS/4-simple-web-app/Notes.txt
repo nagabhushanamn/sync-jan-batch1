@@ -1,0 +1,108 @@
+
+
+
+
+what .js-program can do on web-page in browser-envi ?
+
+
+using browser provided web-apis, 
+.js-program can do any dynamic-actions on web-page
+
+browser provided APIs ==> w3c recommendations
+
+e.g  DOM, XHR, Timer, ...
+
+using DOM
+-----------
+ ---> can create,retreive,update,delete HTML elements
+ ---> can change element's inner text/html content
+ ---> can change element's attributes/properties
+ ---> can change element's style
+ ---> can listen events on elements
+ ---> can validate form-fields before submit
+ ---> can create rich UI components
+ ..
+
+using XHR
+-----------
+ ---> can communicate with server-side async, update resp in existing page
+
+using TimerAPI
+----------------
+ ---> can execute any action on  timeout/interval
+
+
+HTML5 APIs
+-----------
+ref:
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+
+============================================================
+
+.js-lang
+
+==> single-threaded lang , can run concurrent-actions
+==> Non blocking IO
+
+
+browser  e.g chrome
+
+ 1. JS-runtime   ===> ECMAScript spec
+
+    a. single-call-stack  --> to execute contexts
+    b. heap               --> to hold objects
+
+ 2. Web APIs  ( i.e DOM, XHR , Timer , HTML5 Apis)  ==> w3c recommendations
+
+ 3. Event/Callback/Message Queue   
+
+ 4. Event-Loop
+
+ -----------------------------------------------------
+
+
+
+ problems with plain-js
+ ------------------------
+
+
+   ==> browser compatability
+   ==> performance issues ( i.e DOM Manipulation,...)
+   ==> memory management  ( i.e cleaning un-used DOM elements)
+   ==> data-binding is manual
+   ==> code organization is diffucult
+   ...
+
+   soln:
+
+    ==> using third-party .js lib & F.Ws
+
+
+    1. jQuery
+
+    MVC / MVVM based 
+
+    2. knockout
+    3. Backbone
+    4. AngularJS
+    5. EmberJS
+
+    6. DOJO
+    7. ExtJS
+
+    .....
+
+    --------------------------------------------------
+
+    Web component standard ( draft )
+
+
+    1. React.js  
+    2. Angular
+    3. Vue
+    4. Polymerjs
+    ...
+       
+    --------------------------------------------------   
