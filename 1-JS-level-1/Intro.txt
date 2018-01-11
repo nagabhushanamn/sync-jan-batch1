@@ -65,7 +65,6 @@ how to run .js-program ?
    5. 'this' keyword / context's owner
    6. using prototypes
    7. obj's contraints
-   
    8. ES6 - New syntax
    9. ES6 modules & commonJS modules with NPM
    10. Concurreny Model with Event-Loop
