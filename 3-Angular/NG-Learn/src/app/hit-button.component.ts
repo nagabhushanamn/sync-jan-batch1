@@ -3,14 +3,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'app-hit-button',
     template: `
-        <div class="inline">
+        <div class="my-inline well">
             <button (click)="handleBtnClick()" class="btn btn-primary">{{label}}  : <span class="badge">{{count}}</span></button>
         </div>
     `,
     styles: [
         `
-        .inline{
-            float:right;
+        .my-inline{
+            display:inline;
             margin:5px;
         }
       `
