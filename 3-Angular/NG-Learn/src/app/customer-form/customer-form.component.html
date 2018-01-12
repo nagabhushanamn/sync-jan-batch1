@@ -1,0 +1,107 @@
+<div class="col-xs-8 col-sm-6 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">Customer Form</div>
+    <div class="panel-body">
+      <form [formGroup]="customerForm">
+        <fieldset>
+          <div class="form-group">
+            <label for="firstNameId">First Name</label>
+            <input formControlName="firstName"
+                   id="firstNameId" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="lastNameId">Last Name</label>
+            <input  formControlName="lastName"
+                    id="lastNameId" class="form-control" 
+                  />
+          </div>
+          <div formGroupName="emailGroup" class="well">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input  formControlName="email"
+                        id="email" class="form-control" 
+                      />
+            </div>
+            <div class="form-group">
+                <label for="cemail">Confirm Email</label>
+                <input  formControlName="confirmEmail"
+                        id="cemail" class="form-control" 
+                      />
+            </div>
+          </div>
+          <div class="form-group">
+              <label>Phone</label>
+              <input  formControlName="phone"
+                       class="form-control" 
+                    />
+          </div> 
+          <div class="form-group">
+              <label>Notification</label>
+              <input  formControlName="notification"
+                       type="radio"
+                       value="email"
+                       (click)="setNotification('email')"
+                    /> &nbsp; Email
+              <input  formControlName="notification"
+                      type="radio"
+                      value="phone"
+                      (click)="setNotification('phone')"
+                    /> &nbsp; Phone      
+          </div>
+          <div class="form-group">
+              <label>Rating</label>
+              <input  formControlName="rating"
+                       class="form-control" 
+                    />
+          </div> 
+          <div class="form-group">
+              <label >Send Catalog : </label>
+              <input formControlName="sendCatalog" 
+                     type="checkbox"
+                    />
+          </div>
+          <button class="btn btn-primary" (click)="loadEmployee()" type="button">Load Employee</button>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </fieldset>
+      </form>
+      <hr/>
+      <div class="alert alert-danger">
+          {{errorMessage}}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<p>Form-Model from Form-Group</p>
+<pre>
+  {{customerForm.value|json}}
+</pre>
+
+
+
+  <p>Form-Group - state</p>
+  <pre>
+    is pristine : {{customerForm.pristine}} 
+    is dirty    : {{customerForm.dirty}}
+  
+    is invalid  : {{customerForm.invalid}} 
+    is valid    : {{customerForm.valid}}
+  
+    is untouched  : {{customerForm.untouched}} 
+    is touched    : {{customerForm.touched}}
+  
+  </pre>
+  
+
+
+  <p>Form-Control - </p>
+  <pre>
+   
+    is invalid    : {{customerForm.get('rating').invalid}} 
+    is valid      : {{customerForm.get('rating').valid}}
+  
+    errors        : {{customerForm.get('rating').errors|json}}
+  
+  </pre>
+

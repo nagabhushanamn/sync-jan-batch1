@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-review-form',
@@ -7,15 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewFormComponent implements OnInit {
 
-  isOpen: boolean = false
+  @Input()
+  product: any;
 
-  constructor() { }
+  isOpen: boolean = false
+  reviewForm: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.reviewForm = this.fb.group({
+      stars: ['1'],
+      author: ['', [Validators.required, Validators.email]],
+      body: ['', [Validators.required]]
+    });
   }
 
   toggleForm() {
     this.isOpen = !this.isOpen
+  }
+  submitNewReview(event) {
+    event.preventDefault();
+    if (this.reviewForm.valid) {
+      this.product.reviews.push(this.reviewForm.value);
+      this.reviewForm.reset();
+      this.toggleForm();
+    }
   }
 
 }

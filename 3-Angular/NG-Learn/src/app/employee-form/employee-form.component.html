@@ -2,16 +2,29 @@
   <div class="panel panel-default">
     <div class="panel-heading">Employee Form</div>
     <div class="panel-body">
-      <form #employeeForm="ngForm">
+      <form #employeeForm="ngForm" (submit)="handleSubmit($event,employeeForm)">
         <fieldset>
-          <div class="form-group">
+          <div class="form-group" [ngClass]="{'has-error':firstNameVar.invalid && firstNameVar.touched}">
             <label for="firstNameId">First Name</label>
-            <input required ngModel name="firstName" #firstNameVar="ngModel" id="firstNameId" class="form-control" type="text" />
+            <input required  minlength="3"
+                   [ngModel]="employeeModel?.firstName" 
+                   (ngModelChange)="employeeModel.firstName=$event"
+                   name="firstName" 
+                   #firstNameVar="ngModel" 
+                   id="firstNameId" class="form-control" />
+            <div class="help-block">
+              <span *ngIf="firstNameVar.errors?.required && firstNameVar.touched"> FirstName is Required</span>
+              <span *ngIf="firstNameVar.errors?.minlength && firstNameVar.touched"> Min 3 chars </span>
+            </div>        
           </div>
           <div class="form-group">
             <label for="lastNameId">Last Name</label>
-            <input ngModel name="lastName" #lastNameVar="ngModel" id="lastNameId" class="form-control" type="text" />
+            <input [(ngModel)]="employeeModel.lastName"
+                   name="lastName" 
+                   #lastNameVar="ngModel" 
+                   id="lastNameId" class="form-control" />
           </div>
+          <button class="btn btn-primary" (click)="loadEmployee()" type="button">Load</button>
           <button class="btn btn-primary" type="submit">Save</button>
         </fieldset>
       </form>
@@ -24,7 +37,12 @@
   {{employeeForm.value|json}}
 </pre>
 
+<p>Data-Model</p>
+<pre>
+  {{employeeModel|json}}
+</pre>
 
+<!--
 <p>Form-Group - state</p>
 <pre>
   is pristine : {{employeeForm.pristine}} 
@@ -37,17 +55,20 @@
   is touched    : {{employeeForm.touched}}
 
 </pre>
+-->
 
 
-<p>Form-Control - LastName</p>
+<p>Form-Control - FirstName</p>
 <pre>
-  is pristine : {{lastNameVar.pristine}} 
-  is dirty    : {{lastNameVar.dirty}}
+  is pristine : {{firstNameVar.pristine}} 
+  is dirty    : {{firstNameVar.dirty}}
 
-  is invalid  : {{lastNameVar.invalid}} 
-  is valid    : {{lastNameVar.valid}}
+  is invalid  : {{firstNameVar.invalid}} 
+  is valid    : {{firstNameVar.valid}}
 
-  is untouched  : {{lastNameVar.untouched}} 
-  is touched    : {{lastNameVar.touched}}
+  is untouched  : {{firstNameVar.untouched}} 
+  is touched    : {{firstNameVar.touched}}
+
+  errors        : {{firstNameVar.errors|json}}
 
 </pre>

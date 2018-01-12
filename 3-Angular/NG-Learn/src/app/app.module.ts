@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
 
 import { AppComponent } from './app.component';
 import { HitButton } from './hit-button.component';
 import { TotalCountDisplay } from './total-count-display.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { CustomerFormComponent } from './customer-form/customer-form.component';
 
 
 @NgModule({
@@ -14,11 +15,13 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
     AppComponent,
     HitButton,
     TotalCountDisplay,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    CustomerFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@
               <div *ngFor="let review of product.reviews">
                     <app-review [review]="review"></app-review>
               </div>
-              <app-review-form></app-review-form>
+              <app-review-form [product]="product"></app-review-form>
           </div>
       </section>
       <!-- <pre>{{product|json}}</pre> -->
