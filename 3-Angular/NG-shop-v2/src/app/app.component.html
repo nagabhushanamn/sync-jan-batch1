@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="page-header">NG- {{title}}</div>
+
+    <div class="list-group">
+        <div class="list-group-item" *ngFor="let product of products;let idx=index">
+            <app-product [product]="product" [idx]="idx"></app-product>
+        </div>
+    </div>
+
+</div>

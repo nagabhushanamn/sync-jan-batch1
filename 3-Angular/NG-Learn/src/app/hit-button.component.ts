@@ -11,7 +11,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         `
         .my-inline{
             display:inline;
-            margin:5px;
+            margin:10px;
         }
       `
     ]
@@ -32,7 +32,7 @@ export class HitButton {
 
     handleBtnClick() {
         this.count++;
-        this.hit.emit();
+        this.hit.emit({ value: this.label });
     }
 
 

@@ -6,11 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'app';
   totalCount: number = 0;
 
-  incCount(): void {
-    this.totalCount++
+  incCount(event: any): void {
+    console.log(event);
+    this.totalCount += Number.parseInt(event.value)
   }
-  
+
 }
