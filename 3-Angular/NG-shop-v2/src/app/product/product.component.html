@@ -4,9 +4,9 @@
   </div>
   <div class="col-xs-8 col-sm-9 col-md-9">
       <span class="badge">{{idx+1}}</span>
-      <h4>{{product.name}}</h4>
-      <h5>{{product.price}}</h5>
-      <button *ngIf="product.canBuy" class="btn btn-primary">buy</button>
+      <h4>{{product.name|uppercase}}  - <small>{{product.makeDate|date:'yyyy'}}</small></h4>
+      <h5>{{product.price|priceDiscount:product.discount|currency:'INR':true}}</h5>
+      <button (click)="handleBuy()" *ngIf="product.canBuy" class="btn btn-primary">buy</button>
       <hr/>
       <section>
           <ul class="nav nav-tabs">
@@ -18,5 +18,6 @@
           <div *ngIf="isTabSelected(2)" class="panel"><p>Not Yet</p></div>
           <div *ngIf="isTabSelected(3)" class="panel"><p>None Yet</p></div>
       </section>
+      <!-- <pre>{{product|json}}</pre> -->
   </div>
 </div>

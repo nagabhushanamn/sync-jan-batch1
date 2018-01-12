@@ -19,3 +19,7 @@ NG - topics
        1. component   ==> directive + template  ( New UI gragment )
        2. structural  ==> modify existing template/DOM structure
        3. attribute   ==> modify attributes
+
+    3.  Pipes
+
+    

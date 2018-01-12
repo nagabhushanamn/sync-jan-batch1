@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -14,10 +14,16 @@ export class ProductComponent implements OnInit {
 
   tab: number = 1
 
+  @Output()
+  buy = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleBuy() {
+    this.buy.emit({ product: this.product });
   }
 
   changeTab(tabIdx: number, event: any): void {

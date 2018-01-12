@@ -2,8 +2,16 @@
     <div class="page-header">NG- {{title}}</div>
 
     <div class="list-group">
-        <div class="list-group-item" *ngFor="let product of products;let idx=index">
-            <app-product [product]="product" [idx]="idx"></app-product>
+        <span class="badge">{{cart.length}}</span> in cart |
+        <a href (click)="toggleCart($event)">{{viewCart?'view-products':'view-cart'}}</a>
+        <hr/>
+        <div *ngIf="viewCart">
+            <app-view-cart [items]="cart"></app-view-cart>
+        </div>
+        <div *ngIf="!viewCart">
+            <div class="list-group-item" *ngFor="let product of products | slice:0:10;let idx=index">
+                <app-product (buy)="addToCart($event)" [product]="product" [idx]="idx"></app-product>
+            </div>
         </div>
     </div>
 
