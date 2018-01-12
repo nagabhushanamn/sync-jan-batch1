@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = "shopIT-v1"
+  tab: number = 1
   products: Array<any> = [
     {
       name: 'Laptop',
@@ -23,4 +24,13 @@ export class AppComponent {
       image: 'images/Mobile.png'
     }
   ]
+
+  changeTab(tabIdx: number, event: any): void {
+    event.preventDefault();
+    this.tab = tabIdx
+  }
+  isTabSelected(tabIdx: number): boolean {
+    return this.tab === tabIdx;
+  }
+
 }

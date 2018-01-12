@@ -10,6 +10,7 @@ NG - topics
 
        a. interpolation  ==> {{}}
        b. property/attribute binding  ==> <element [property]="" />
+       c. event-binding ==> <element  (click)="handler()"/>
 
     2. directives
 

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="page-header"> NG - Learn </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading"> App component - {{totalCount}} </div>
+    <div class="panel-body">
+
+      <app-hit-button (hit)="incCount()" label="+1"></app-hit-button>
+      <app-hit-button (hit)="incCount()" label="+10"></app-hit-button>
+      <app-hit-button (hit)="incCount()" label="-10"></app-hit-button>
+
+      <app-total-count-display [count]="totalCount"></app-total-count-display>
+
+    </div>
+  </div>
+
+</div>
