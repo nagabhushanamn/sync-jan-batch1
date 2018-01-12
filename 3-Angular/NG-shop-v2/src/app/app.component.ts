@@ -17,7 +17,11 @@ export class AppComponent {
       canBuy: true,
       image: 'images/Laptop.png',
       makeDate: Date.now(),
-      discount: 10000
+      discount: 10000,
+      reviews: [
+        { stars: 5, author: 'nag@gmail.com', body: 'good one' },
+        { stars: 3, author: 'indu@gmail.com', body: 'costly one' }
+      ]
     },
     {
       name: 'Mobile',
@@ -25,7 +29,11 @@ export class AppComponent {
       description: 'New  pro',
       canBuy: true,
       image: 'images/Mobile.png',
-      makeDate: Date.now()
+      makeDate: Date.now(),
+      reviews: [
+        { stars: 5, author: 'nag@gmail.com', body: 'good one' },
+        { stars: 3, author: 'indu@gmail.com', body: 'costly one' }
+      ]
     }
   ]
 

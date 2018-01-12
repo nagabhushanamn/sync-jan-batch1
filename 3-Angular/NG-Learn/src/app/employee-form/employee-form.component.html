@@ -1,0 +1,53 @@
+<div class="col-xs-8 col-sm-6 col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">Employee Form</div>
+    <div class="panel-body">
+      <form #employeeForm="ngForm">
+        <fieldset>
+          <div class="form-group">
+            <label for="firstNameId">First Name</label>
+            <input required ngModel name="firstName" #firstNameVar="ngModel" id="firstNameId" class="form-control" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="lastNameId">Last Name</label>
+            <input ngModel name="lastName" #lastNameVar="ngModel" id="lastNameId" class="form-control" type="text" />
+          </div>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<p>Form-Model from Form-Group</p>
+<pre>
+  {{employeeForm.value|json}}
+</pre>
+
+
+<p>Form-Group - state</p>
+<pre>
+  is pristine : {{employeeForm.pristine}} 
+  is dirty    : {{employeeForm.dirty}}
+
+  is invalid  : {{employeeForm.invalid}} 
+  is valid    : {{employeeForm.valid}}
+
+  is untouched  : {{employeeForm.untouched}} 
+  is touched    : {{employeeForm.touched}}
+
+</pre>
+
+
+<p>Form-Control - LastName</p>
+<pre>
+  is pristine : {{lastNameVar.pristine}} 
+  is dirty    : {{lastNameVar.dirty}}
+
+  is invalid  : {{lastNameVar.invalid}} 
+  is valid    : {{lastNameVar.valid}}
+
+  is untouched  : {{lastNameVar.untouched}} 
+  is touched    : {{lastNameVar.touched}}
+
+</pre>
