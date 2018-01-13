@@ -1,0 +1,18 @@
+
+
+
+// counter-app 
+
+
+state :
+
+    counter={count:0}
+
+----------------------------------
+
+Action(s)
+
+    - increment  ==> {type:'INCREMENT',value}
+    - decrement
+
+------------------------------------        

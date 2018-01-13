@@ -1,0 +1,26 @@
+<div *ngIf="products.length===0" class="alert alert-danger">
+  No Products
+</div>
+<table *ngIf="products.length!==0" class="table table-bordered table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let product of products" [ngClass]="{'bg-success':product.id===newItemId}">
+    <td>{{product.name}}</td>
+    <td>{{product.price | currency:'INR'}}</td>
+    <td><a [routerLink]="['/edit',product.id]"><i class="glyphicon glyphicon-edit"></i></a></td>
+    <td><a href (click)="deleteProduct($event,product.id)"><i class="glyphicon glyphicon-trash"></i></a></td>
+  </tr>
+</table> 
+
+
+
+<!--
+<p-dataTable [value]="products">
+  <p-column field="name" header="Name"></p-column>
+  <p-column field="price" header="Year"></p-column>
+</p-dataTable>
+-->

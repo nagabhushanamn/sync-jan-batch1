@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="page-header"> NG - change-detection </div>
+
+  <h3>Progress: {{progress}}</h3>
+  <hr/>
+
+  <button class="btn btn-primary" (click)="processWithinAngularZone()">
+    Process within Angular zone
+  </button>
+  <button class="btn btn-danger" (click)="processOutsideAngularZone()">
+    Process outside Angular zone
+  </button>
+
+  <button (click)="changePrice()" class="btn btn-warning"> change price </button>
+
+  <hr/>
+
+  <app-product [product]="product"></app-product>
+
+
+</div>

@@ -1,0 +1,25 @@
+
+
+Unit Testing
+-------------
+
+    ==> AAA
+
+    A --> Arrange
+    A --> Act
+    A --> Assert
+
+
+   Unit-Testing F.Ws
+
+   -> Jasmine  
+   -> Mocha
+   -> Jest
+   -> Ava
+
+   TestRunner 
+
+    -> Karma
+
+   ---------------------------------------- 
+
